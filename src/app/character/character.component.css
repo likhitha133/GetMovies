@@ -1,0 +1,31 @@
+
+.charactersContent {
+    margin-top: 20px;
+}
+
+.character {
+    padding: 5px;
+    cursor: pointer;
+}
+.character > a:hover {
+    background: lightgray;
+}
+.active {
+    color: #000000;
+    background: lightgray;
+    border: lightgray;
+}
+
+h3 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+
+@media only screen and (max-width: 768px) and (min-width: 30px) {
+    h3 {
+        font-size: 16px;
+    }
+}

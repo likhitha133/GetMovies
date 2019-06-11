@@ -1,0 +1,27 @@
+<div class="row charactersContent">
+  <div class="col-md-5">
+      <h3>List of the characters</h3>
+      <ul>
+        <li *ngFor="let char of characters" class="character">
+            <a (click)="getMovies(char)"  [ngClass]="{'active': selectedCharacter === char}">{{char.name}}</a>
+        </li>
+      </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 *ngIf="!showMovie">Please select Character!</h3>
+    <div *ngIf="showMovie">
+      <h3 class="detailsHeader">Details of the selected character are:</h3>
+      <table class="table table-hover">
+        <tr>
+          <th> Movie Title </th>
+          <th> Release Date </th>
+        </tr>
+        <tr *ngFor="let i of movieNames">
+          <td>{{i.title}}</td>
+          <td>{{i.release_date | date: 'fullDate'}}</td>
+        </tr>
+        </table>
+      <p *ngIf="showError" class="text-center">{{errorMessage}}</p>
+    </div>      
+  </div>
+</div>
